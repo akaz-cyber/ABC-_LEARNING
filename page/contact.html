@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Contact</title>
 </head>
@@ -98,17 +99,16 @@
      
 
     <div class="form-class">
-      <form action="/action_page.php">
-        <label for="fname">Gmail</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your gmail..">
+      <form onsubmit="">
+        <label for="fname">Phone Number</label>
+        <input type="number" id="number"  placeholder="Phone number" required>
     
         <label for="lname">Username</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your name..">
+        <input type="text" id="name"  placeholder="Your name.." required>
     
-        <label for="subject">Massage</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    
-        <input type="submit" value="Submit">
+        <label for="subject">Message</label>
+        <textarea id="message" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <input type="submit" onclick="sendMessage()"  value="Submit">
       </form>
     </div>
 </div>
@@ -125,9 +125,10 @@
     <div class="footer-class">
       <img src="/img/logo.png" alt="">
       <div class="footer-link">
-        <a href=""> Facebook</a>
-        <a href=""> Instagram</a>
-        <a href=""> Twitter</a>
+      
+        <a href=""><i class="fa fa-facebook-f"></i></a>
+        <a href=""> <i class="fa fa-instagram"></i></a>
+        <a href=""> <i class="fa fa-twitter-square"></i></a>
       </div>
    </div>
    <hr>
@@ -141,7 +142,7 @@
   </div>
    
 </footer>
-
+<script src="script.js"></script>
 
   <!-- end feedback --> 
 <!-- end card contact -->

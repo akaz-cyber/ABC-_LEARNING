@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
 <body>
@@ -48,24 +49,24 @@
   </div>
   <div class="coursecard1">
     <div class="card">
-      <img src="img/hero.jpg" alt="Denim Jeans" style="width:100%">
+      <img src="/img/html.png" alt="Denim Jeans" style="width:100%">
       <h1>HTML</h1>
       <p>HTML is The standard markup language for documents designed to displayed in internet browser..</p>
-      <p><button>Go course</button></p>
+      <p><button onclick="myFun()">Go course</button></p>
     </div>
     
      <div class="card">
-      <img src="img/hero.jpg" alt="Denim Jeans" style="width:100%">
+      <img src="img/java2.jpg" alt="Denim Jeans" style="width:100%">
       <h1>Java</h1>
       <p>programming that can be run on various computers including mobile phones..</p>
-      <p><button>Go Course</button></p>
+      <p><button onclick="myFun()">Go Course</button></p>
     </div>
     
      <div class="card">
-      <img src="img/hero.jpg" alt="Denim Jeans" style="width:100%">
+      <img src="/img/microsoft.png" alt="Denim Jeans" style="width:100%">
       <h1>Microsoft</h1>
       <p>Microsoft is company which developed word,powerpoin,exel and etc..</p>
-      <p><button>Go course</button></p>
+      <p><button onclick="myFun()">Go course</button></p>
     </div>
   
  </div>
@@ -80,7 +81,7 @@
   <h2>Let's start The Course</h2>
   <h1>To get a better</h1>
   <h1> Experice</h1>
-  <button> <a href="#"> Course Now</a></button>
+  <button onclick="myFun()"> <a href="#"> Course Now</a></button>
 </div>
 
 <!-- End experice  -->
@@ -90,17 +91,18 @@
     <div class="footer-class">
       <img src="/img/logo.png" alt="">
       <div class="footer-link">
-        <a href=""> Facebook</a>
-        <a href=""> Instagram</a>
-        <a href=""> Twitter</a>
+      
+        <a href=""><i class="fa fa-facebook-f"></i></a>
+        <a href=""> <i class="fa fa-instagram"></i></a>
+        <a href=""> <i class="fa fa-twitter-square"></i></a>
       </div>
    </div>
    <hr>
    <div class="footer-class">
-     <p>Copyright © ABC Learning. All rights reversed. </p>
+     <p> Copyright © ABC Learning. All rights reversed. </p>
      <div class="footer-link">
-        <a href="./page/sitemap.html">SiteMap |</a>
-        <a href="./page/pripacy_policy.html">Privacy policy</a>
+        <a href="../page/sitemap.html">SiteMap |</a>
+        <a href="../page/pripacy_policy.html">Privacy policy</a>
      </div>
    </div>
   </div>
@@ -108,5 +110,10 @@
 </footer>
 
 <script type= "text/javascript" src="script.js"></script>
+<script>
+  function myFun() {
+    alert(" This page coming soon ")
+  }
+</script>
 </body>
 </html>
