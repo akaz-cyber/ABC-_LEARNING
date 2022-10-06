@@ -147,7 +147,7 @@ text-transform: capitalize;
   }
   
   
-  .card button {
+  .card  button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -642,22 +642,24 @@ input[type=submit]:hover {
 }
 
 .button-course{
-  padding: 20px;
+  margin-top: 40px;
+  padding: 1px;
   display: flex;
    justify-content: space-between;
-   gap: 50px;
+   gap: 20px;
 
 }
-.button-course button{
-  width: 100%;
-  border-radius: 20px;
+.button-course a button{
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
   background-color:#999999;
   color: whitesmoke;
 }
-.button-course button:hover{
+.button-course a button:hover{
  background-color: #04AA6D;
 }
-.button-course button a{
+.button-course a button {
   text-decoration: none;
   color: white;
 }
@@ -679,6 +681,230 @@ input[type=submit]:hover {
   margin-top: 70px;
 }
 
+
+.container-tabs{
+  margin: 0 auto;
+  padding: 20px;
+}
+.tab_navigation{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 30px;
+}
+.tab_navigation li{
+  display: inline-block;
+  padding: 5px 15px;
+  min-width:  100px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.tab_navigation li:hover{
+  color: #999999;
+}
+.tab_navigation li.active{
+  background:  #EDEDED;
+  border-bottom: 3px solid #04AA6D;
+
+
+}
+.tab_container{
+  padding: 10px;
+  background: #EDEDED;
+  border-radius: 0 5px 5px 5px ;
+  display: none;
+}
+.tab_container{
+   font-size: 20px;
+   padding: 20px;
+} 
+.accordion{
+  min-width: 600px;
+  padding: 20px;
+}
+.accordion-item{
+   border-bottom:1px solid #ddd ;
+   padding: 20px 0;
+}
+.item-header{
+  padding: 14px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.title{
+  font-size: 20px;
+  font-weight: 600;
+}
+.icon{
+  width: 28px;
+  height: 28px;
+   border: 2px solid #000;
+   border-radius:50%;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   line-height: 25px;
+}
+
+.text{
+   color: #888;
+   padding: 0 6px;
+   max-height: 0;
+   overflow: hidden;
+}
+
+.accordion-item.active .text{
+  max-height: 600px;
+  transition: .4s linear;
+}
+.tab_container section{
+  font-size: 20px;
+  padding: 20px;
+}
+.tab_container h3{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.tab_container h2{
+   font-size: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.mentor-detail{
+  display: flex;
+  width: 100%;
+  height: 70vh;  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.mentor-detail img{
+   width: 600px;
+   height: 300px;
+   margin-top: 60px;
+   margin-left: 40px;
+   border: solid 1px;
+   border-radius: 100%;
+}
+.about-mentor{
+  padding: 70px;
+  font-size: 20px;
+
+}
+
+.about-mentor{
+  text-align: center;
+}
+.about-mentor p{
+ margin-top: 40px;
+
+}
+.about-mentor h1{
+  font-size: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.about-mentor h1:after{
+  content: "";
+  height: 5px;
+  width: 225px;
+  background-color: rgb(39, 33, 33);
+  display: block;
+  margin: auto;
+}
+.about-mentor a button {
+  margin: 60px;
+  border-radius: 20px;
+  width: 30%;
+  height: 10%;
+  cursor: pointer;
+}
+.about-mentor button:hover{
+  background-color: #888;
+}
+/* End Course-detail */
+
+.schedule{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  font-size: 50px;
+  color: whitesmoke;
+  justify-content: center;
+  background: url(/img/schedule.jpg);
+}
+.schedule h1{
+  margin: auto;
+}
+
+.preview{
+  justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    background: url("./img/theo.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    opacity: 1.5;
+}
+
+.preview h2{
+
+   font-size: 50px;
+   color: whitesmoke;
+}
+.preview a button {
+  width: 300px;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 10px;
+  color: whitesmoke;
+   background-color: rgba(128, 128, 128, 0.393);
+   cursor: pointer;
+}
+.preview a button:hover{
+  background-color:  rgba(128, 128, 128, 0.7) ;
+}
+
+/* Page java Course */
+
+.java-course{
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  color: rgb(245, 245, 245);
+  font-size: 50px;
+  background-image: url(./img/java3.jpg);
+  background-size: cover;
+}
+.java-course h1{
+  margin: auto;
+}
+/* End java course */
+/* Page Microsoft */
+
+.microsoft-course{
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  color: rgb(6, 76, 92);
+  font-size: 50px;
+  background-image: url(./img/microso.jpg);
+  background-size: cover;
+}
+.microsoft-course h1{
+  margin: auto;
+}
+/* End Microsoft */
 
 footer {
   width: 100%;
