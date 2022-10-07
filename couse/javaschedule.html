@@ -10,24 +10,28 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-         <img src="../img/logo.png" alt="">
-        </div>  
-        <a href="" class="burger-button">
-          <span class="bur"></span>
-          <span class="bur"></span>
-          <span class="bur"></span>
-        </a>
-       <nav class="list-nav">
-         <ul>
-           <li><a href="../index.html">home</a></li>
-           <li><a href="../page/about.html">about</a></li>
-           <li><a href="../page/course.html">Course</a></li>
-           <li><a href="../page/contact.html">Contact</a></li>
-         </ul>      
-       </nav>
-     </div>
+  <div class="navbar">
+    <div class="logo">
+     <img src="../img/logo.png" alt="">
+    </div>  
+    <a href="" class="burger-button">
+      <span class="bur"></span>
+      <span class="bur"></span>
+      <span class="bur"></span>
+    </a>
+   <nav class="list-nav">
+     <ul>
+       <li><a href="../index.html">home</a></li>
+       <li><a href="../page/about.html">about</a></li>
+       <li><a class="dropbtn">Course</a>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="../page/course.html">Course Details</a>
+            <a href="../page/schedulecourse.html">Course Schedule</a>
+        </div>
+       <li><a href="../page/contact.html">Contact</a></li>
+     </ul>      
+   </nav>
+ </div>
 
      <ul class="breadcumbs">
       <li class="breadcumbs_item">
@@ -64,35 +68,53 @@
        <h1>List Schedule</h1>
        <p>Lorem ipsum dolor sit amet consectetur</p>
        </div>
-<div class="accordion">
-  <div class="accordion-item">
-    <div class="item-header">
-      <h1 class="title">Schedule for Java 1</h1>
-      <div class="icon">></div>
-    </div>
-    <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
-    </p>
-  </div>
-  <div class="accordion-item">
-    <div class="item-header">
-      <h1 class="title">Schedule for Java 2</h1>
-      <div class="icon">></div>
-    </div>
-    <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
-    </p>
-  </div>
-  <div class="accordion-item">
-    <div class="item-header">
-      <h1 class="title">Schedule for Java 3</h1>
-      <div class="icon">></div>
-    </div>
-    <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
-    </p>
-  </div>
-</div>
+       <div class="accordion">
+        <div class="accordion-item">
+          <div class="item-header">
+            <h1 class="title">Schedule for Java 1</h1>
+            <div class="icon i-row">></div>
+            <div class="icon i-colon">-</div>
+          </div>
+          <div class="text">
+            <p>
+              07/10/2022   
+            </p>
+              <button onclick="myFun()" class="button button1">
+                Go Schedule
+              </button> 
+            </div>
+        </div>
+        <div class="accordion-item">
+          <div class="item-header">
+            <h1 class="title">Schedule for Java 2</h1>
+            <div class="icon i-row">></div>
+            <div class="icon i-colon">-</div>
+          </div>
+          <div class="text">
+            <p>
+              07/10/2022   
+            </p>
+              <button onclick="myFun()" class="button button1">
+                Go Schedule
+              </button> 
+            </div>
+        </div>
+        <div class="accordion-item">
+          <div class="item-header">
+            <h1 class="title">Schedule for java 3</h1>
+            <div class="icon i-row">></div>
+            <div class="icon i-colon">-</div>
+          </div>
+          <div class="text">
+            <p>
+              07/10/2022   
+            </p>
+              <button onclick="myFun()" class="button button1">
+                Go Schedule
+              </button> 
+            </div>
+        </div>
+      </div>
 
 <div class="preview">
   <h2> Preview Theory</h2>
@@ -124,15 +146,43 @@
 
 <!-- acordion jquery-->
 <script>
-    
-  $(".item-header").click(function(){ 
-    $(".accordion-item").removeClass("active");
-    $(this).parent().addClass("active");
-    $(".icon").text(">");
-    $(this).children(".icon").text("-");
-});
+
+
+  $(document).ready(function(){
+
+
+    $('.text').hide();
+
+
+      $(".accordion-item").click(function(){
+
+          index = $(this).index();
+          $('.text').eq(index).slideToggle(100);
+          $('.i-row').eq(index).toggle();
+          $(".i-colon").eq(index).toggle();
+
+      });
+
+
+  });
+
+
 </script>
 <!-- End acordion jquery-->
-    
+<script>
+  function myFun() {
+    alert(" This page coming soon ")
+  }
+</script>    
+
+
+ 
+<script>
+  $(document).ready(function () {
+      $(".dropbtn").click(function () {
+          $('#myDropdown').slideToggle();
+      });
+  });
+</script>
 </body>
 </html>

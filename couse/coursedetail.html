@@ -10,24 +10,28 @@
     <title>Course Detail HTML</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-         <img src="../img/logo.png" alt="">
-        </div>  
-        <a href="" class="burger-button">
-          <span class="bur"></span>
-          <span class="bur"></span>
-          <span class="bur"></span>
-        </a>
-       <nav class="list-nav">
-         <ul>
-           <li><a href="../index.html">home</a></li>
-           <li><a href="../page/about.html">about</a></li>
-           <li><a href="../page/course.html">Course</a></li>
-           <li><a href="../page/contact.html">Contact</a></li>
-         </ul>      
-       </nav>
-     </div>
+  <div class="navbar">
+    <div class="logo">
+     <img src="../img/logo.png" alt="">
+    </div>  
+    <a href="" class="burger-button">
+      <span class="bur"></span>
+      <span class="bur"></span>
+      <span class="bur"></span>
+    </a>
+   <nav class="list-nav">
+     <ul>
+       <li><a href="../index.html">home</a></li>
+       <li><a href="../page/about.html">about</a></li>
+       <li><a class="dropbtn">Course</a>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="../page/course.html">Course Details</a>
+          <a href="../page/schedulecourse.html">Course Schedule</a>
+      </div>  
+       <li><a href="../page/contact.html">Contact</a></li>
+     </ul>      
+   </nav>
+ </div>
      <ul class="breadcumbs">
       <li class="breadcumbs_item">
           <a href="../index.html" class="breadcumbs_link"> Home</a>
@@ -71,35 +75,53 @@
                   <h3>Course Description</h3>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem minus, dicta nulla similique eaque, labore deserunt quia excepturi consectetur praesentium, nihil consequuntur corrupti nostrum enim? Modi laudantium alias perspiciatis, maiores inventore culpa quia, expedita fugiat iure, obcaecati minima deleniti libero.</p>
               </section>
-                <div class="accordion">
-                  <div class="accordion-item">
-                    <div class="item-header">
-                      <h1 class="title">Materials Tittle 1</h1>
-                      <div class="icon">></div>
-                    </div>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
-                    </p>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <div class="item-header">
+                    <h1 class="title">Materials Tittle 1</h1>
+                    <div class="icon i-row">></div>
+                    <div class="icon i-colon">-</div>
                   </div>
-                  <div class="accordion-item">
-                    <div class="item-header">
-                      <h1 class="title">Materials Tittle 2</h1>
-                      <div class="icon">></div>
-                    </div>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
+                  <div class="text">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, eaque?
                     </p>
-                  </div>
-                  <div class="accordion-item">
-                    <div class="item-header">
-                      <h1 class="title">Materials Tittle 3</h1>
-                      <div class="icon">></div>
+                      <button onclick="myFun()" class="button button1">
+                        Watch
+                      </button> 
                     </div>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat recusandae omnis est a, cupiditate porro, veritatis quae nesciunt amet facilis cumque odio, officia maiores inventore animi fugit aliquid in quis minus voluptatem vitae voluptas dolores? Aut temporibus architecto repudiandae, aspernatur, corrupti autem earum voluptas nisi dolor illum aliquam, explicabo tempore sit provident. Voluptatum quam reprehenderit, maiores neque nulla possimus.
-                    </p>
-                  </div>
                 </div>
+                <div class="accordion-item">
+                  <div class="item-header">
+                    <h1 class="title">Materials Tittle 2</h1>
+                    <div class="icon i-row">></div>
+                    <div class="icon i-colon">-</div>
+                  </div>
+                  <div class="text">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, quasi.
+                    </p>
+                      <button onclick="myFun()" class="button button1">
+                       Watch
+                      </button> 
+                    </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="item-header">
+                    <h1 class="title">Materials Tittle 3</h1>
+                    <div class="icon i-row">></div>
+                    <div class="icon i-colon">-</div>
+                  </div>
+                  <div class="text">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, quam.
+                    </p>
+                      <button onclick="myFun()" class="button button1">
+                        Watch
+                      </button> 
+                    </div>
+                </div>
+              </div>
               </div>
           </div>
 
@@ -142,14 +164,29 @@
 </footer>
 
 <!-- acordion jquery-->
+
 <script>
-    
-  $(".item-header").click(function(){ 
-    $(".accordion-item").removeClass("active");
-    $(this).parent().addClass("active");
-    $(".icon").text(">");
-    $(this).children(".icon").text("-");
-});
+
+
+  $(document).ready(function(){
+
+
+    $('.text').hide();
+
+
+      $(".accordion-item").click(function(){
+
+          index = $(this).index();
+          $('.text').eq(index).slideToggle(100);
+          $('.i-row').eq(index).toggle();
+          $(".i-colon").eq(index).toggle();
+
+      });
+
+
+  });
+
+
 </script>
 <!-- End acordion jquery-->
  
@@ -177,6 +214,18 @@
   </script>
    <!-- End Tab Menu  -->
    
-       
+   <script>
+    function myFun() {
+      alert(" This page coming soon ")
+    }
+  </script>    
+
+  <script>
+      $(document).ready(function () {
+          $(".dropbtn").click(function () {
+              $('#myDropdown').slideToggle();
+          });
+      });
+    </script>
 </body>
 </html>

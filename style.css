@@ -21,7 +21,6 @@ body{
     right: 0;
     background-color: white;
     box-shadow: 0 7px 15px 0 rgb(0, 0, 0, 0.5);
-  
 }
 .logo{
    padding: 10px;   
@@ -40,6 +39,10 @@ body{
     text-align: center;
     margin-top: 10px;
    
+}
+
+.list-nav .active{
+  color: crimson;
 }
 .list-nav li{
     justify-content: center;
@@ -61,6 +64,54 @@ text-transform: capitalize;
 .list-nav a:hover{
     color:crimson;
 }
+/* End Navbar */
+/* Dropdown Button */
+.dropbtn {
+  color: black;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  top: 100px;
+  right: 10px;
+  position: absolute;
+  background-color: rgb(255,255,255);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.644);
+  z-index: 10000000;
+  margin-left: 650px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color:  rgba(255, 255, 255, 0.463); ;
+}
+
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
 /* hero page */
 .hero{
     margin-top: 50px;
@@ -258,7 +309,7 @@ text-transform: capitalize;
     background-image: url("/img/workit.jpg") ;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     
 }
 .wave{
@@ -270,6 +321,7 @@ text-transform: capitalize;
   font-size: 40px;
   color: white;
   backdrop-filter: brightness(10%);
+  margin-top: 40px;
     
 }
 .wave:before{
@@ -291,6 +343,7 @@ text-transform: capitalize;
     display: flex;
     width: 100%;
     height: 70vh;
+
    
 }
 .more_about img{
@@ -646,18 +699,19 @@ input[type=submit]:hover {
   padding: 1px;
   display: flex;
    justify-content: space-between;
-   gap: 20px;
+  
 
 }
 .button-course a button{
-  width: 150px;
+  width: 300px;
+  height: 50px;
   border-radius: 10px;
   cursor: pointer;
-  background-color:#999999;
+  background-color:#01b3ff;
   color: whitesmoke;
 }
 .button-course a button:hover{
- background-color: #04AA6D;
+ background-color: #00557f;
 }
 .button-course a button {
   text-decoration: none;
@@ -740,6 +794,7 @@ input[type=submit]:hover {
   font-weight: 600;
 }
 .icon{
+  /* display: none; */
   width: 28px;
   height: 28px;
    border: 2px solid #000;
@@ -750,12 +805,43 @@ input[type=submit]:hover {
    line-height: 25px;
 }
 
-.text{
-   color: #888;
-   padding: 0 6px;
-   max-height: 0;
-   overflow: hidden;
+.i-colon {
+  display: none;
 }
+
+.text{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  
+}
+.text p{
+  margin-left: 50px;
+  font-size: 20px;
+}
+.text .button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+   width: 150px;
+   height: 300px;
+  cursor: pointer;
+  height: 20px;
+}
+
+.text .button.button1 {
+  background-color: white; 
+  height: 50px;
+  margin-top: -20px;
+  margin-right: 20px;
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+
+}
+
 
 .accordion-item.active .text{
   max-height: 600px;
@@ -818,9 +904,10 @@ input[type=submit]:hover {
 }
 .about-mentor a button {
   margin: 60px;
+   
   border-radius: 20px;
   width: 30%;
-  height: 10%;
+  height: 50px;
   cursor: pointer;
 }
 .about-mentor button:hover{
@@ -861,16 +948,17 @@ input[type=submit]:hover {
    color: whitesmoke;
 }
 .preview a button {
-  width: 300px;
+  width: 200px;
   height: 40px;
   margin-top: 40px;
   border-radius: 10px;
-  color: whitesmoke;
-   background-color: rgba(128, 128, 128, 0.393);
+   color: black;
+   background-color: whitesmoke;
    cursor: pointer;
+   font-size: 15px;
 }
 .preview a button:hover{
-  background-color:  rgba(128, 128, 128, 0.7) ;
+  background-color:  rgba(245, 245, 245, 0.479);
 }
 
 /* Page java Course */
