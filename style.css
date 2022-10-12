@@ -42,7 +42,7 @@ body{
 }
 
 .list-nav .active{
-  color: crimson;
+  color: #4CAF50 ;
 }
 .list-nav li{
     justify-content: center;
@@ -62,7 +62,15 @@ text-transform: capitalize;
 }
 
 .list-nav a:hover{
-    color:crimson;
+    color:  #4CAF50;
+}
+
+.tanda{
+  background-color: white;
+  color: black;
+  width: 20vh;
+  border-radius: 40px;
+  border: 2px solid  grey; /* Green */
 }
 /* End Navbar */
 /* Dropdown Button */
@@ -83,7 +91,7 @@ text-transform: capitalize;
 .dropdown-content {
   display: none;
   top: 100px;
-  right: 10px;
+  right: 250px;
   position: absolute;
   background-color: rgb(255,255,255);
   min-width: 160px;
@@ -306,7 +314,7 @@ text-transform: capitalize;
     width: 100%;
     height: 100vh;
     backdrop-filter: brightness(10%);
-    background-image: url("/img/workit.jpg") ;
+    background-image: url(img/workit.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat; 
@@ -324,15 +332,15 @@ text-transform: capitalize;
   margin-top: 40px;
     
 }
-.wave:before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: url(/img/wave-d.png) 100% 100% no-repeat;
-    background-size: cover;
+.wave:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url(img/wave-d.png) 100% 100% no-repeat;
+  background-size: cover;
 }
 .wave p{
    margin-top: 40px;
@@ -922,7 +930,7 @@ input[type=submit]:hover {
   font-size: 50px;
   color: whitesmoke;
   justify-content: center;
-  background: url(/img/schedule.jpg);
+  background: url(img/schedule.jpg);
 }
 .schedule h1{
   margin: auto;
@@ -1005,6 +1013,19 @@ footer hr{
   border-right: none;
   border-left: none;
   margin: 20px 0px;
+}
+.thank{
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  font-size: 40px;
+}
+
+.btn-b{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .footer {

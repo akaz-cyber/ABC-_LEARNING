@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../register.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+         <img src="../img/logo.png" alt="">
+        </div>  
+        <a href="" class="burger-button">
+          <span class="bur"></span>
+          <span class="bur"></span>
+          <span class="bur"></span>  
+        </a>
+       <nav class="list-nav">
+         <ul>
+           <li><a href="../index.html">home</a></li>
+           <li><a href="../page/about.html">about</a></li>
+           <li><a class="dropbtn">Course</a>
+             <div id="myDropdown" class="dropdown-content">
+                 <a href="../page/schedulecourse.html">Schedule</a>
+                 <a href="../page/course.html">Details</a>
+                 <a href="../page/listing.html">Listing</a>
+             </div>
+           <!-- <li><a href="./page/course.html">Course</a></li> -->
+           <li><a href="../page/contact.html">Contact</a></li>
+           <li><a href="../page/register.html" class="tanda active">Sign up</a></li>
+         </ul>      
+       </nav>
+     </div>
+     <br>
+     <form onsubmit="register(event);">
+        <div class="container">
+          <h1>Register</h1>
+           
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="Email" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="username"><b>Usename</b></label>
+          <input type="text" placeholder="Enter Username" name="username" id="username" required>
+          
+          <label for="Contact"><b>Contact Number</b></label>
+          <input type="text" placeholder="Enter Contact" name="contact" id="contact" required>
+          
+          <label for="Qualification"><b>Qualification</b></label>
+          <select name="Qualification" id="Qualification">
+            <option value="junior"> junior</option>
+            <option value="hight junior"> hight junior</option>
+            
+          </select>
+      
+          <label for="Address"><b>Address</b></label>
+          <input type="text" placeholder="Enter address" name="address" id="address" required>
+          <hr>
+          <button type="submit" class="registerbtn">Register</button>
+        </div>
+      </form>
+
+     <br>
+<script>
+    $(document).ready(function () {
+        $(".dropbtn").click(function () {
+            $('#myDropdown').slideToggle();
+        });
+    });
+  </script>
+
+
+<script>
+$('select').select2({
+  minimumResultsForSearch: -1,
+  placeholder: function(){
+      $(this).data('placeholder');
+  }
+});
+
+</script>
+<script src="../register.js"></script>
+</body>
+</html>
