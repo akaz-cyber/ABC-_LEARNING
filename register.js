@@ -1,3 +1,4 @@
+// register js
 const register = a =>{
     let email = document.getElementById('email').value,
     username = document.getElementById('username').value,
@@ -6,26 +7,26 @@ const register = a =>{
     address = document.getElementById('address').value;
 
    let formData = JSON.parse(localStorage.getItem('formData')) || [];
-   
+//  validate
    let exist = formData.length && 
    JSON.parse(localStorage.getItem('formData')).some(data => 
-       data.fname.toLowerCase() == fname.toLowerCase() && 
-       data.lname.toLowerCase() == lname.toLowerCase()
+       data.email.toLowerCase() == email.toLowerCase()    
    );
 
-   
    
    if(!exist){
     formData.push({ email,username, contact,Qualification,address });
     localStorage.setItem('formData', JSON.stringify(formData));
     document.querySelector('form').reset();
     document.getElementById('email').focus();
-    alert("Account Created.\n\nPlease Sign In using the link below.");
+    alert("Account Created.");
+    window.open("thank.html");
 }
 else{
-    alert("Ooopppssss... Duplicate found!!!\nYou have already sigjned up");
+    alert("Ooopppssss... Duplicate found!!");
+     document.location.href("register.html")
 }
 a.preventDefault();
-window.open("thank.html");
+
 
 }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="admin">
+        <h1>
+            Admin Page
+        </h1>
+    </div>
+
+
+    <table border="1px solid" id="FormData">
+        <tr>
+            <th>No</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Contact</th>
+            <th>Qualification</th>
+            <th>Address</th>
+            <th>action</th>
+        </tr>
+    </table>
+
+    <form id="form-id">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your name..">
+
+        <label for="lname">username</label>
+        <input type="username" id="username" name="username" placeholder="Your last name..">
+
+        <label for="lname">Contact</label>
+        <input type="contact" id="contact" name="contact" placeholder="Your last name..">
+
+        <label for="Qualification">Qualification</label>
+        <select id="Qualification" name="Qualification">
+            <option value="junior">junior</option>
+            <option value="hight junior">hight Junior</option>
+        </select>
+
+        <label for="lname">address</label>
+        <input type="text" id="address" name="address" placeholder="Your last name..">
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            let data = JSON.parse(localStorage.getItem("formData")) || [];
+
+            console.log(data);
+
+            function table(data) {
+                for (let a = 0; a < data.length; a++) {
+
+                    let row =
+                        `<tr>
+            <td>${a + 1}</td>
+            <td>${data[a].email}</td>
+            <td>${data[a].username}</td>
+            <td>${data[a].contact}</td>
+            <td>${data[a].Qualification}</td>
+            <td>${data[a].address}</td>
+            <td>
+             <a class=\'edit\' href=\'${a}\'>Edit Data</a>
+             <a class=\'delete\' href=\'${a}\'>delete</a>
+                        </td>
+          </tr> 
+          
+          `;
+
+                    $('#FormData').append(row);
+                }
+            }
+
+            table(data);
+           
+           $(".delete").click(function(a){
+               let index =$(this).attr("href");
+               
+               data.splice(index,1);
+               localStorage.setItem("formData",JSON.stringify(data));
+               location.reload()
+               a.preventDefault();
+           });
+           
+           
+           
+           
+            // edit
+            $(".edit").click(function (a) {
+                
+                let index2 = $(this).attr("href");
+
+
+                let email= $('#email').val(data[index2].email);
+                let username = $('#username').val(data[index2].username);
+                let contact = $('#contact').val(data[index2].contact);
+                let Qualification =$('#Qualification').val(data[index2].Qualification);
+                let address = $('#address').val(data[index2].address);
+                a.preventDefault();
+
+                $('#form-id').submit(function(a){
+                    data[index2].email = $('#email').val();
+                    data[index2].username = $('#username').val();
+                    data[index2].contact = $('#contact').val();
+                    data[index2].Qualification = $('#Qualification').val();
+                    data[index2].address = $('#address').val();
+                    localStorage.setItem("formData",JSON.stringify(data));
+                    location.reload()
+                    a.preventDefault();
+                });
+
+            });
+
+
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
