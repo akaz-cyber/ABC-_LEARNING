@@ -1028,9 +1028,9 @@ footer hr{
 .thank{
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 500px;
   font-size: 40px;
-  color: whitesmoke;
+ font-family: 'Times New Roman', Times, serif;
   
 }
 
