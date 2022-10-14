@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../page/admin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Admin</title>
 </head>
 
 <body>
     <div class="admin">
         <h1>
-            Admin Page
+            Dashboard 
         </h1>
+        <p> Admin ABC learning center   </p>
     </div>
 
 
-    <table border="1px solid" id="FormData">
+    <table border="1px solid" style="width: 100%;" id="FormData">
         <tr>
             <th>No</th>
             <th>Email</th>
@@ -30,7 +32,40 @@
         </tr>
     </table>
 
-    <form id="form-id">
+
+     <form id="form-id">
+        <div class="container">
+          <h1>Edit Update</h1>
+           
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="Email" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="username"><b>Usename</b></label>
+          <input type="text" placeholder="Enter Username" name="username" id="username" required>
+          
+          <label for="Contact"><b>Contact Number</b></label>
+          <input type="text" placeholder="Enter Contact" name="contact" id="contact" required>
+          
+          <label for="Qualification"><b>Qualification</b></label>
+          <select name="Qualification" id="Qualification">
+            <option value="HTML">HTML</option>
+            <option value="Microsoft"> Microsoft </option>
+            <option value="Java">Java</option>
+            
+          </select>
+      
+          <label for="Address"><b>Address</b></label>
+          <input type="text" placeholder="Enter address" name="address" id="address" required>
+          <hr>
+          <button type="submit" class="registerbtn"  id="active">Update</button>
+        </div>
+    </form>
+
+    
+<!-- 
+    <form >
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Your name..">
 
@@ -50,8 +85,8 @@
         <input type="text" id="address" name="address" placeholder="Your last name..">
 
         <input type="submit" value="Submit">
-    </form>
-    </div>
+    </form> -->
+   
 
     <script>
         $(document).ready(function () {
@@ -72,8 +107,8 @@
             <td>${data[a].Qualification}</td>
             <td>${data[a].address}</td>
             <td>
-             <a class=\'edit\' href=\'${a}\'>Edit Data</a>
-             <a class=\'delete\' href=\'${a}\'>delete</a>
+             <a class=\'edit\' href=\'${a}\'> <button class="button button1">Edit Data</button></a>
+             <a class=\'delete\' href=\'${a}\'> <button class="button button2">delete</button></a>
                         </td>
           </tr> 
           
@@ -84,14 +119,24 @@
             }
 
             table(data);
+
+
+
+            //delete    
            
            $(".delete").click(function(a){
+               let conf = confirm("Are your sure want delete this data? ")
                let index =$(this).attr("href");
                
-               data.splice(index,1);
-               localStorage.setItem("formData",JSON.stringify(data));
-               location.reload()
-               a.preventDefault();
+               if(conf === true){
+                data.splice(index,1);
+                localStorage.setItem("formData",JSON.stringify(data));
+                location.reload()
+                a.preventDefault();
+               }else{
+                a.preventDefault();
+               }
+              
            });
            
            
@@ -99,16 +144,15 @@
            
             // edit
             $(".edit").click(function (a) {
-                
-                let index2 = $(this).attr("href");
-
-
-                let email= $('#email').val(data[index2].email);
-                let username = $('#username').val(data[index2].username);
-                let contact = $('#contact').val(data[index2].contact);
-                let Qualification =$('#Qualification').val(data[index2].Qualification);
-                let address = $('#address').val(data[index2].address);
+                $("#form-id").show();
                 a.preventDefault();
+                let index2 = $(this).attr("href");
+                let data= getCrudData();
+                document.getElementById('email').value = data[index2].email;
+                document.getElementById('username').value = data[index2].username;
+                document.getElementById('contact').value = data[index2].contact;
+                document.getElementById('Qualification').value = data[index2].Qualification;
+                document.getElementById('address').value = data[index2].address;
 
                 $('#form-id').submit(function(a){
                     data[index2].email = $('#email').val();
@@ -119,9 +163,13 @@
                     localStorage.setItem("formData",JSON.stringify(data));
                     location.reload()
                     a.preventDefault();
-                });
+                })
 
-            });
+            })
+            function getCrudData() {
+                let data = JSON.parse(localStorage.getItem("formData"));
+                return data;
+            }
 
 
         });
