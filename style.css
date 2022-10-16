@@ -129,7 +129,9 @@ text-transform: capitalize;
     font-weight: 500;
     font-size: 40px;
     line-height: 1;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 .hero p{
     font-weight: 700;
     font-size: 20px;
@@ -470,7 +472,6 @@ text-transform: capitalize;
 .address-team-2 h1{
   font-size: 50px;
   font-weight: 800;
-  text-transform: uppercase;
 }
 .address-team-2 h1:after{
   content: "";

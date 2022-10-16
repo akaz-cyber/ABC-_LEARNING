@@ -48,10 +48,10 @@
           <label for="username"><b>Usename</b></label>
           <input type="text" placeholder="Enter Username" name="username" id="username" required>
           
-          <label for="Contact"><b>Contact</b></label>
-          <input type="text" placeholder="Enter Contact" name="contact" id="contact" required>
+          <label for="Contact"><b>Number Contact</b></label>
+          <input type="text" placeholder="Enter number Contact" name="contact" id="contact" pattern="[0-9]+" minlength="11" maxlength="13" required>
           
-          <label for="Qualification"><b>Qualification</b></label>
+          <label for="Qualification"><b>Course</b></label>
           <select name="Qualification" id="Qualification">
             <option value="HTML">HTML</option>
             <option value="Microsoft"> Microsoft </option>
@@ -67,6 +67,9 @@
       </form>
 
      <br>
+
+
+     
 <script>
     $(document).ready(function () {
         $(".dropbtn").click(function () {

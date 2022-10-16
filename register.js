@@ -12,10 +12,9 @@ const register = a =>{
    JSON.parse(localStorage.getItem('formData')).some(data => 
        data.email.toLowerCase() == email.toLowerCase()    
    );
-
    
    if(!exist){
-    formData.push({ email,username, contact,Qualification,address });
+    formData.unshift({ email,username, contact,Qualification,address });
     localStorage.setItem('formData', JSON.stringify(formData));
     document.querySelector('form').reset();
     document.getElementById('email').focus();

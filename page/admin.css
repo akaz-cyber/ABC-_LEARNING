@@ -41,7 +41,7 @@
     }
 
     /* Full-width input fields */
-    input[type=text], input[type=email] {
+    input[type=text], input[type=email], input[type=number] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -107,6 +107,9 @@
         display: none;
     }
 
+    #form-add{
+        display: none;
+    }
 
     #FormData{
         margin-top: 20px;
@@ -148,6 +151,26 @@
 
     .button2:hover{
         background-color:rgb(119, 13, 34);
+    }
+
+    .button3 {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        background-color: rgb(11, 232, 22);
+        cursor: pointer;
+    }
+
+    .button3:hover{
+        background-color: rgba(3, 63, 6, 0.904);
+    }
+    button i{
+     margin-right:10px;
     }
     
     /* .button2 {background-color: #008CBA;} Blue */
