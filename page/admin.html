@@ -15,12 +15,12 @@
 <body>
     <div class="admin">
         <h1>
-            Dashboard 
+            Dashboard
         </h1>
-        <p> Admin ABC learning center   </p>
+        <p> Admin ABC learning center </p>
     </div>
 
- <button class="button button3"><i class="fa fa-plus" aria-hidden="true"></i>Add Data</button></a>
+    <a class=add> <button class="button button3">Add Data</button></a>
     <table border="1px solid" style="width: 100%;" id="FormData">
         <tr>
             <th>No</th>
@@ -33,39 +33,72 @@
         </tr>
     </table>
 
-</div>
-    
+    </div>
 
-     <form id="form-id">
+
+    <form id="form-id">
         <div class="container">
-          <h1>Edit Update</h1>
-           
-          <hr>
-      
-          <label for="email"><b>Email</b></label>
-          <input type="Email" placeholder="Enter Email" name="email" id="email" required>
-      
-          <label for="username"><b>Usename</b></label>
-          <input type="text" placeholder="Enter Username" name="username" id="username" required>
-          
-          <label for="Contact"><b>Contact Number</b></label>
-          <input type="text" placeholder="Enter number Contact" name="contact" id="contact" pattern="[0-9]+" minlength="11" maxlength="13" required>
+            <h1>Edit Update</h1>
 
-          <label for="Qualification"><b>Course</b></label>
-          <select name="Qualification" id="Qualification">
-            <option value="HTML">HTML</option>
-            <option value="Microsoft"> Microsoft </option>
-            <option value="Java">Java</option>
-            
-          </select>
-      
-          <label for="Address"><b>Address</b></label>
-          <input type="text" placeholder="Enter address" name="address" id="address" required>
-          <hr>
-          <button type="submit" class="registerbtn"  id="active">Update</button>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input type="Email" placeholder="Enter Email" name="email" id="email" required>
+
+            <label for="username"><b>Usename</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="Contact"><b>Contact Number</b></label>
+            <input type="text" placeholder="Enter number Contact" name="contact" id="contact" pattern="[0-9]+"
+                minlength="11" maxlength="13" required>
+
+            <label for="Qualification"><b>Course</b></label>
+            <select name="Qualification" id="Qualification">
+                <option value="HTML">HTML</option>
+                <option value="Microsoft"> Microsoft </option>
+                <option value="Java">Java</option>
+
+            </select>
+
+            <label for="Address"><b>Address</b></label>
+            <input type="text" placeholder="Enter address" name="address" id="address" required>
+            <hr>
+            <button type="submit" class="registerbtn" id="active">Update</button>
         </div>
     </form>
-   
+
+
+    <form id="form-add">
+        <div class="container">
+            <h1>Add data</h1>
+
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input type="Email" placeholder="Enter Email" name="email" id="email2" required>
+
+            <label for="username"><b>Usename</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username2" required>
+
+            <label for="Contact"><b>Contact Number</b></label>
+            <input type="text" placeholder="Enter number Contact" name="contact" id="contact2" pattern="[0-9]+"
+                minlength="11" maxlength="13" required>
+
+            <label for="Qualification"><b>Course</b></label>
+            <select name="Qualification" id="Qualification2">
+                <option value="HTML">HTML</option>
+                <option value="Microsoft"> Microsoft </option>
+                <option value="Java">Java</option>
+
+            </select>
+
+            <label for="Address"><b>Address</b></label>
+            <input type="text" placeholder="Enter address" name="address" id="address2" required>
+            <hr>
+            <button type="submit" class="registerbtn" id="active">Add data</button>
+        </div>
+    </form>
+
 
     <script>
         $(document).ready(function () {
@@ -86,6 +119,7 @@
             <td>${data[a].Qualification}</td>
             <td>${data[a].address}</td>
             <td>
+               
              <a class=\'edit\' href=\'${a}\'> <button class="button button1">Edit Data</button></a>
              <a class=\'delete\' href=\'${a}\'> <button class="button button2">delete</button></a>
                         </td>
@@ -102,45 +136,78 @@
 
 
             //delete    
-           
-           $(".delete").click(function(a){
-               let conf = confirm("Are your sure want delete this data? ")
-               let index =$(this).attr("href");
-               
-               if(conf === true){
-                data.splice(index,1);
-                localStorage.setItem("formData",JSON.stringify(data));
-                location.reload()
-                a.preventDefault();
-               }else{
-                a.preventDefault();
-               }
-              
-           });
-           
-           
-           
-           
-           
+
+            $(".delete").click(function (a) {
+                let conf = confirm("Are your sure want delete this data? ")
+                let index = $(this).attr("href");
+
+                if (conf === true) {
+                    data.splice(index, 1);
+                    localStorage.setItem("formData", JSON.stringify(data));
+                    location.reload()
+                    a.preventDefault();
+                } else {
+                    a.preventDefault();
+                }
+
+            });
+
+            $(".add").click(function (a) {
+                $("#form-add").show();
+                $("#form-id").hide();
+                $("#form-add").submit(function () {
+                    let email = document.getElementById('email2').value,
+                        username = document.getElementById('username2').value,
+                        contact = document.getElementById('contact2').value,
+                        Qualification = document.getElementById('Qualification2').value,
+                        address = document.getElementById('address2').value;
+
+                    let formData = JSON.parse(localStorage.getItem('formData')) || [];
+                    //  validate
+                    let exist = formData.length &&
+                        JSON.parse(localStorage.getItem('formData')).some(data =>
+                            data.email.toLowerCase() == email.toLowerCase()
+                        );
+
+                    if (!exist) {
+                        formData.unshift({ email, username, contact, Qualification, address });
+                        localStorage.setItem('formData', JSON.stringify(formData));
+                        document.querySelector('form').reset();
+                        document.getElementById('email2').focus();
+                        alert("Account Created.");
+                        document.location.href("admin.html");
+                    }
+                    else {
+                        alert("Ooopppssss... Duplicate found!!");
+                        document.location.href("admin.html");
+                    }
+                    a.preventDefault();
+
+                });
+            });
+
+
+
             // edit
             $(".edit").click(function (a) {
                 $("#form-id").show();
+                $("#form-add").hide();
                 a.preventDefault();
                 let index2 = $(this).attr("href");
-                let data= getCrudData();
+                let data = getCrudData();
                 document.getElementById('email').value = data[index2].email;
                 document.getElementById('username').value = data[index2].username;
                 document.getElementById('contact').value = data[index2].contact;
                 document.getElementById('Qualification').value = data[index2].Qualification;
                 document.getElementById('address').value = data[index2].address;
 
-                $('#form-id').submit(function(a){
+                $('#form-id').submit(function (a) {
                     data[index2].email = $('#email').val();
                     data[index2].username = $('#username').val();
                     data[index2].contact = $('#contact').val();
                     data[index2].Qualification = $('#Qualification').val();
                     data[index2].address = $('#address').val();
-                    localStorage.setItem("formData",JSON.stringify(data));
+                    localStorage.setItem("formData", JSON.stringify(data));
                     location.reload()
                     a.preventDefault();
                 })
